@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>동성캐스탑 — 핵심인력 장기근속 설계</title>
+<style>
+  :root{
+    --navy:#1f3864; --blue:#2e75b6; --lblue:#eef4fb; --gold:#b08d2e;
+    --ink:#1a1a1a; --grey:#6b6b6b; --line:#dfe3ea; --green:#3a7d44; --warn:#b5532a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Pretendard','맑은 고딕','Malgun Gothic',sans-serif;background:#eceef1;color:var(--ink);line-height:1.6;padding:28px 14px}
+  .page{max-width:880px;margin:0 auto;background:#fff;padding:48px 52px 40px;box-shadow:0 4px 24px rgba(0,0,0,.1)}
+  .eyebrow{font-size:13px;letter-spacing:3px;color:var(--blue);font-weight:700;text-transform:uppercase}
+  h1{font-size:30px;color:var(--navy);font-weight:800;margin:6px 0 4px;letter-spacing:-.5px}
+  .sub{font-size:15px;color:var(--grey);margin-bottom:8px}
+  .rule{height:3px;background:linear-gradient(90deg,var(--navy),var(--blue) 60%,transparent);margin:14px 0 28px;border-radius:2px}
+
+  .lead{background:var(--lblue);border-left:5px solid var(--blue);padding:18px 22px;border-radius:0 8px 8px 0;margin-bottom:30px}
+  .lead .q{font-size:18px;font-weight:700;color:var(--navy);margin-bottom:6px}
+  .lead p{font-size:14.5px;color:#333}
+
+  .flow{display:flex;align-items:stretch;gap:0;margin:6px 0 30px}
+  .step{flex:1;position:relative;background:#fafbfc;border:1px solid var(--line);border-radius:10px;padding:16px 14px;text-align:center}
+  .step .n{width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center;margin:0 auto 9px}
+  .step .t{font-size:14.5px;font-weight:700;color:var(--navy);margin-bottom:4px}
+  .step .d{font-size:11.5px;color:var(--grey);line-height:1.45}
+  .arrow{display:flex;align-items:center;color:var(--blue);font-size:22px;font-weight:700;padding:0 6px}
+
+  h2{font-size:18px;color:var(--navy);font-weight:800;margin:30px 0 12px;padding-bottom:7px;border-bottom:2px solid var(--line);display:flex;align-items:center;gap:9px}
+  h2 .ico{width:24px;height:24px;background:var(--navy);color:#fff;border-radius:6px;font-size:13px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+
+  .card{border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin-bottom:12px}
+  .card .ttl{font-weight:700;color:var(--ink);font-size:15px;margin-bottom:4px}
+  .card .ttl b{color:var(--blue)}
+  .card .bd{font-size:13.5px;color:#444}
+
+  .benefit{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:6px 0 8px}
+  .bx{border-radius:10px;padding:18px 20px}
+  .bx.before{background:#fbf3ef;border:1px solid #e8c9bb}
+  .bx.after{background:#eef7f0;border:1px solid #bfe0c7}
+  .bx .lab{font-size:12px;font-weight:700;letter-spacing:1px;margin-bottom:8px}
+  .bx.before .lab{color:var(--warn)}
+  .bx.after .lab{color:var(--green)}
+  .bx .big{font-size:22px;font-weight:800;color:var(--navy);margin-bottom:6px;line-height:1.3}
+  .bx ul{list-style:none;font-size:13px;color:#444}
+  .bx li{padding:3px 0 3px 18px;position:relative}
+  .bx li::before{content:'';position:absolute;left:2px;top:11px;width:6px;height:6px;border-radius:50%}
+  .bx.before li::before{background:var(--warn)}
+  .bx.after li::before{background:var(--green)}
+
+  .num{display:flex;gap:18px;margin:14px 0;flex-wrap:wrap}
+  .nb{flex:1;min-width:140px;text-align:center;background:#fafbfc;border:1px solid var(--line);border-radius:10px;padding:16px 10px}
+  .nb .v{font-size:26px;font-weight:800;color:var(--navy)}
+  .nb .v small{font-size:14px;font-weight:700}
+  .nb .l{font-size:12px;color:var(--grey);margin-top:3px}
+  .nb .l b{color:var(--navy)}
+  .nb .sub2{font-size:10.5px;color:#9a9a9a;margin-top:1px}
+
+  .note{background:#fcf7ec;border:1px solid #ecd9a8;border-radius:9px;padding:14px 18px;font-size:13px;color:#5c4a1e;margin-top:8px}
+  .note b{color:var(--warn)}
+
+  .foot{margin-top:32px;padding-top:14px;border-top:1px solid var(--line);font-size:11.5px;color:#9a9a9a;line-height:1.6}
+  .stamp{display:inline-block;font-size:11px;color:var(--blue);font-weight:700;border:1px solid var(--blue);border-radius:20px;padding:3px 12px;margin-bottom:10px}
+
+  @media print{body{background:#fff;padding:0}.page{box-shadow:none;max-width:100%}}
+  @media(max-width:680px){.flow{flex-direction:column}.arrow{transform:rotate(90deg);padding:4px 0}.benefit{grid-template-columns:1fr}.page{padding:30px 22px}}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="eyebrow">동성캐스탑 · 인재 설계 제안</div>
+  <h1>회사의 손[手]을, 회사에 오래 머물게 하는 법</h1>
+  <div class="sub">핵심 공장 운영 인력의 장기근속 설계 — 주식매수선택권(스톡옵션)</div>
+  <div class="rule"></div>
+
+  <div class="lead">
+    <div class="q">"급여만으로는, 그 사람을 붙잡아 둘 수 없습니다."</div>
+    <p>공장을 실제로 돌리는 핵심 인력. 그가 5년, 6년을 한결같이 회사에 있어 주기를 바라신다면 —
+    급여 위에 <b>'회사의 미래를 함께 나눈다'</b>는 한 겹의 약속이 필요합니다.
+    그 약속을 법이 보장하는 방식으로 묶는 것이 주식매수선택권입니다.</p>
+  </div>
+
+  <!-- 흐름 -->
+  <div class="flow">
+    <div class="step"><div class="n">1</div><div class="t">정관 정비</div><div class="d">자기주식 보유·스톡옵션 부여의 근거를 정관에 마련</div></div>
+    <div class="arrow">›</div>
+    <div class="step"><div class="n">2</div><div class="t">경영 책임 부여</div><div class="d">핵심 인력에게 등기임원으로서의 책임과 자리를 부여</div></div>
+    <div class="arrow">›</div>
+    <div class="step"><div class="n">3</div><div class="t">권리 약정</div><div class="d">'2년 이상 재직 후 행사' — 장기근속을 계약으로 명문화</div></div>
+    <div class="arrow">›</div>
+    <div class="step"><div class="n">4</div><div class="t">벤처 인증</div><div class="d">세금 혜택의 문을 여는 마지막 열쇠</div></div>
+  </div>
+
+  <!-- before / after -->
+  <h2><span class="ico">1</span>무엇이 달라지는가</h2>
+  <div class="benefit">
+    <div class="bx before">
+      <div class="lab">지금 (비벤처)</div>
+      <div class="big">혜택의 문이<br>닫혀 있음</div>
+      <ul>
+        <li>스톡옵션 부여는 가능하나</li>
+        <li>행사로 얻은 이익 전액이 근로소득으로 과세</li>
+        <li>핵심 인력이 손에 쥐는 실질이 줄어듦</li>
+      </ul>
+    </div>
+    <div class="bx after">
+      <div class="lab">벤처 인증 후</div>
+      <div class="big">혜택의 문이<br>열림</div>
+      <ul>
+        <li>행사이익 <b>연 2억 비과세</b></li>
+        <li>한 사람당 <b>누적 5억까지</b> 비과세</li>
+        <li>같은 약속에, 더 큰 실질이 전해짐</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 숫자 -->
+  <h2><span class="ico">2</span>핵심 숫자</h2>
+  <div class="num">
+    <div class="nb"><div class="v">2<small>억</small></div><div class="l">연간 비과세 한도</div></div>
+    <div class="nb"><div class="v">5<small>억</small></div><div class="l">1인 누적 비과세 한도</div></div>
+    <div class="nb"><div class="v">2<small>년+</small></div><div class="l">행사 전 의무 재직기간</div></div>
+    <div class="nb"><div class="v">~’27.12</div><div class="l"><b>비과세 부여 마감</b></div><div class="sub2">이 날까지 ‘부여’하면 적용</div></div>
+  </div>
+
+  <div class="note" style="background:#eef4fb;border-color:#bcd4ee;color:#234">
+    <b style="color:var(--navy)">기한의 기준은 ‘행사’가 아니라 ‘부여’입니다.</b>
+    2027년 12월 31일까지 <b>부여만 마쳐두면</b>, 그 권리를 2년 근속 후 언제 행사하든 — 2029년이든 그 뒤든 — 비과세는 그대로 따라갑니다.
+    우리가 지킬 마감선은 ‘행사일’이 아니라 <b>‘부여를 그 안에 끝내는 것’</b>입니다.
+  </div>
+
+  <!-- 재원 -->
+  <h2><span class="ico">3</span>재원 — 회사가 가진 자기주식을 쓴다</h2>
+  <div class="card">
+    <div class="ttl">새로 주식을 찍지 않고, <b>보유 중인 자기주식을 교부</b>합니다.</div>
+    <div class="bd">개정 상법은 자기주식의 임직원 보상 목적 활용을 적법한 길로 인정합니다(상법 §341조의4②2호).
+    보유처분계획을 주주총회에서 승인받아 두면, 소각 의무에 쫓기지 않고 이 약속의 재원으로 활용할 수 있습니다.
+    회사가 이미 가진 것을 인재에게 돌려주는 구조입니다.</div>
+  </div>
+  <div class="note">
+    <b>유의 — 시점 관리.</b> 기존에 보유한 자기주식은 <b>2027년 9월 5일</b>까지 소각 또는 보유계획 승인이라는 갈림길에 섭니다.
+    스톡옵션 재원으로 쓰려면 그 전에 '임직원 보상 목적'을 계획에 담아 주총 승인을 받아 두는 일정이 필요합니다.
+  </div>
+
+  <div class="foot">
+    <span class="stamp">내부 검토 완료 · 파트너 검수 예정</span><br>
+    적용 법령 — 상법 §340조의2 · §341조의4, 상법 시행령 §30, 벤처기업법 §16조의3 및 시행령 §11조의3, 조세특례제한법 §16조의2~4.
+    세제 효과 중 양도소득세 이연(과세특례) 적용 여부 등 일부 항목은 최종 확정 전 파트너 세무사·변호사의 검수가 필요합니다.
+    본 자료는 의사결정을 돕기 위한 설명용 요약이며, 법령·세법은 개정 가능성이 있습니다.<br>
+    <b style="color:var(--navy)">밸류마크 경영컨설팅</b> · 2026.06.10
+  </div>
+
+</div>
+</body>
+</html>

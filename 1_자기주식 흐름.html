@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>자기주식, 보유하려면 — 법이 요구하는 것</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    width: 1587px;
+    height: 1123px;
+    background: #EFEFEC;
+    print-color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+    font-family: 'Noto Sans KR', sans-serif;
+    overflow: hidden;
+  }
+
+  @page { size: A3 landscape; margin: 0; }
+
+  @media print {
+    html, body {
+      width: 1587px;
+      height: 1123px;
+      background: #EFEFEC;
+      print-color-adjust: exact !important;
+      -webkit-print-color-adjust: exact !important;
+    }
+    .page {
+      background: #EFEFEC;
+      print-color-adjust: exact !important;
+      -webkit-print-color-adjust: exact !important;
+    }
+    * {
+      print-color-adjust: exact !important;
+      -webkit-print-color-adjust: exact !important;
+    }
+  }
+
+  .page {
+    width: 1587px;
+    height: 1123px;
+    background: #EFEFEC;
+    print-color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  /* ── 헤더 ── */
+  .header {
+    background: #2B2318;
+    print-color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 56px;
+    border-bottom: 2px solid #C9A96E;
+  }
+
+  .header-left {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+  }
+
+  .header-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 21px;
+    font-weight: 600;
+    color: #F5EFE4;
+    letter-spacing: -0.3px;
+  }
+
+  .header-sub {
+    font-size: 11px;
+    color: #C9A96E;
+    letter-spacing: 1.5px;
+    font-weight: 400;
+  }
+
+  .header-right {
+    text-align: right;
+    font-size: 10px;
+    color: #A09070;
+    line-height: 1.7;
+    letter-spacing: 0.5px;
+  }
+
+  /* ── 본문 5컬럼 ── */
+  .body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 0;
+  }
+
+  .col {
+    border-right: 1px solid #D8D4CC;
+    padding: 30px 26px 26px;
+    display: flex;
+    flex-direction: column;
+    print-color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+  .col:last-child { border-right: none; }
+
+  .col-tag {
+    font-size: 8.5px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 9px;
+    color: #8B6914;
+  }
+
+  .col-heading {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.45;
+    margin-bottom: 14px;
+    padding-bottom: 13px;
+    color: #1C1410;
+    border-bottom: 1px solid #C9A96E;
+  }
+
+  .col-body {
+    font-size: 10.5px;
+    line-height: 1.82;
+    font-weight: 300;
+    flex: 1;
+    color: #3A3028;
+  }
+
+  .col-remark {
+    margin-top: 14px;
+    padding: 10px 14px;
+    border-radius: 1px;
+    font-size: 10px;
+    font-style: italic;
+    line-height: 1.7;
+    font-weight: 400;
+    background: #E8E2D4;
+    color: #6B4E1A;
+    print-color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+
+  /* ── 컬럼별 배경 — 라이트 그레이 계열, 미세 차이 ── */
+  .col-1 {
+    background: #F2EFE8;
+    print-color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+  .col-2 {
+    background: #EEECEA;
+    print-color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+  .col-3 {
+    background: #ECEAE6;
+    print-color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+  .col-4 {
+    background: #EAE8E4;
+    print-color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+  .col-5 {
+    background: #EDE8E2;
+    print-color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+
+  /* 법령 인용 블록 */
+  .law-text {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 10.5px;
+    color: #2B2318;
+    line-height: 1.85;
+    border-left: 2px solid #C9A96E;
+    padding-left: 12px;
+    margin-bottom: 14px;
+    print-color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+
+  /* ②항 — 예외 호 목록 */
+  .ho-list { list-style: none; }
+  .ho-item {
+    display: flex;
+    gap: 9px;
+    margin-bottom: 10px;
+    align-items: flex-start;
+  }
+  .ho-num {
+    font-size: 8px;
+    font-weight: 700;
+    color: #8B6914;
+    background: #DDD3B8;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    min-width: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+    print-color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+  .ho-text {
+    font-size: 10.5px;
+    color: #3A3028;
+    line-height: 1.65;
+    font-weight: 300;
+  }
+  .ho-sub {
+    font-size: 9px;
+    color: #8B6914;
+    display: block;
+    margin-top: 1px;
+    font-weight: 400;
+  }
+
+  /* ③항 — 조건 블록 */
+  .cond-block { margin-top: 16px; }
+  .cond-label {
+    font-size: 8.5px;
+    font-weight: 700;
+    color: #8B6914;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+  .cond-text {
+    font-size: 10.5px;
+    color: #3A3028;
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  /* ④항 — 기재사항 목록 */
+  .item-list { list-style: none; }
+  .item-row {
+    display: flex;
+    gap: 9px;
+    margin-bottom: 9px;
+    align-items: flex-start;
+  }
+  .item-n {
+    font-size: 8px;
+    font-weight: 700;
+    color: #8B6914;
+    width: 16px;
+    height: 16px;
+    min-width: 16px;
+    border: 1px solid #C9A96E;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+    print-color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+  .item-text {
+    font-size: 10.5px;
+    color: #3A3028;
+    line-height: 1.65;
+    font-weight: 300;
+  }
+  .item-sub {
+    font-size: 9px;
+    color: #6B5530;
+    margin-top: 3px;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  /* 부칙 — 데드라인 */
+  .deadline-num {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #8B3320;
+    letter-spacing: -0.5px;
+    margin-bottom: 4px;
+    print-color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+  .deadline-basis {
+    font-size: 9px;
+    color: #7A5540;
+    line-height: 1.65;
+    margin-bottom: 18px;
+  }
+
+  .notice-block { margin-bottom: 14px; }
+  .notice-label {
+    font-size: 8.5px;
+    font-weight: 700;
+    color: #8B3320;
+    letter-spacing: 0.8px;
+    margin-bottom: 5px;
+    print-color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+  .notice-text {
+    font-size: 10.5px;
+    color: #3A3028;
+    line-height: 1.75;
+    font-weight: 300;
+  }
+  .notice-text strong {
+    color: #5A2010;
+    font-weight: 600;
+  }
+
+  /* ── 풋터 ── */
+  .footer {
+    background: #2B2318;
+    print-color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+    border-top: 1px solid #C9A96E;
+    padding: 13px 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-quote {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 13px;
+    color: #E8DEC8;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+  }
+
+  .footer-note {
+    font-size: 9px;
+    color: #8B7A5A;
+    text-align: right;
+    line-height: 1.7;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- 헤더 -->
+  <div class="header">
+    <div class="header-left">
+      <div class="header-title">자기주식, 보유하려면 — 법이 요구하는 것</div>
+      <div class="header-sub">상법 §341조의4</div>
+    </div>
+    <div class="header-right">
+      [시행 2026. 3. 6.] 법률 제21448호<br>
+      밸류마크 경영컨설팅
+    </div>
+  </div>
+
+  <!-- 본문 5컬럼 -->
+  <div class="body">
+
+    <!-- ①항 — 원칙 -->
+    <div class="col col-1">
+      <div class="col-tag">§341조의4 ①항 — 원칙</div>
+      <div class="col-heading">취득하면<br>소각한다</div>
+      <div class="col-body">
+        <div class="law-text">
+          "회사가 자기주식을 취득한 때에는 그 취득한 날부터 1년 이내에 소각하여야 한다."
+        </div>
+        [시행 2026. 3. 6., 법률 제21448호]
+      </div>
+      <div class="col-remark">
+        원칙은 소각. 보유는 예외.
+      </div>
+    </div>
+
+    <!-- ②항 — 예외 보유의 조건 -->
+    <div class="col col-2">
+      <div class="col-tag">§341조의4 ②항 — 예외 보유의 조건</div>
+      <div class="col-heading">보유처분계획을<br>주총 승인받으면<br>보유할 수 있다</div>
+      <div class="col-body">
+        <ul class="ho-list">
+          <li class="ho-item">
+            <div class="ho-num">1</div>
+            <div class="ho-text">
+              회사가 주주 전원에게 취득할 자기주식의 종류·수·가격·기간을 서면으로 통지하는 경우
+              <span class="ho-sub">→ 주주 전원에게 지분비례로</span>
+            </div>
+          </li>
+          <li class="ho-item">
+            <div class="ho-num">2</div>
+            <div class="ho-text">
+              주식매수선택권의 행사에 따라 자기주식을 교부하는 경우
+              <span class="ho-sub">→ 임직원 보상 — 주식매수선택권</span>
+            </div>
+          </li>
+          <li class="ho-item">
+            <div class="ho-num">3</div>
+            <div class="ho-text">
+              우리사주조합에 자기주식을 배정하는 경우
+              <span class="ho-sub">→ 우리사주제도</span>
+            </div>
+          </li>
+          <li class="ho-item">
+            <div class="ho-num">4</div>
+            <div class="ho-text">
+              합병, 분할 등 다른 법률의 규정에 따른 경우
+              <span class="ho-sub">→ 합병·분할 등 법령상 활용</span>
+            </div>
+          </li>
+          <li class="ho-item">
+            <div class="ho-num">5</div>
+            <div class="ho-text">
+              회사가 신기술의 도입, 재무구조의 개선 등 회사의 경영상 목적을 달성하기 위하여 필요한 경우로서 제434조에 따른 주주총회의 결의로 정관에 그 사유를 규정한 경우
+              <span class="ho-sub">→ 경영상 목적 — 정관에 사유 규정(특별결의)</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ③항 — 매년 승인 -->
+    <div class="col col-3">
+      <div class="col-tag">§341조의4 ③항 — 매년 승인</div>
+      <div class="col-heading">보유처분계획을<br>매년 주총에서<br>승인받아야 한다</div>
+      <div class="col-body">
+        <div class="law-text">
+          "회사는 제2항에 따른 자기주식보유처분계획을 매년 주주총회에서 승인받아야 한다."
+        </div>
+        [시행 2026. 3. 6., 법률 제21448호]
+
+        <div class="cond-block">
+          <div class="cond-label">보유하려면 — 두 가지 모두</div>
+          <div class="cond-text">
+            ⓐ 정관에 사유 규정(§434 특별결의)<br>
+            ⓑ 매년 주총 승인<br><br>
+            둘 다 없으면 예외 자격이 없다.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ④항 — 기재사항 -->
+    <div class="col col-4">
+      <div class="col-tag">§341조의4 ④항 — 보유처분계획 기재사항</div>
+      <div class="col-heading">이사 전원<br>기명날인 또는<br>서명하여야 한다</div>
+      <div class="col-body">
+        <ul class="item-list">
+          <li class="item-row">
+            <div class="item-n">1</div>
+            <div class="item-text">자기주식의 보유 또는 처분 목적</div>
+          </li>
+          <li class="item-row">
+            <div class="item-n">2</div>
+            <div class="item-text">보유 또는 처분 대상이 되는 자기주식의 종류와 수, 취득방법</div>
+          </li>
+          <li class="item-row">
+            <div class="item-n">3</div>
+            <div class="item-text">
+              보유 개시시점 및 예정된 처분시점을 기준으로 하는 다음 각 목의 사항
+              <div class="item-sub">
+                가. 자기주식의 종류와 수, 취득방법<br>
+                나. 발행주식총수에서 자기주식을 제외한 나머지 주식의 종류와 수<br>
+                다. 발행주식총수 대비 자기주식 비율의 변화
+              </div>
+            </div>
+          </li>
+          <li class="item-row">
+            <div class="item-n">4</div>
+            <div class="item-text">예정된 보유 기간</div>
+          </li>
+          <li class="item-row">
+            <div class="item-n">5</div>
+            <div class="item-text">예정된 처분 시기</div>
+          </li>
+        </ul>
+      </div>
+      <div class="col-remark">
+        계획서는 양식이 정해져 있다.<br>빈칸으로 둘 수 없고, 이사 전원 날인이 필요하다.
+      </div>
+    </div>
+
+    <!-- 부칙 -->
+    <div class="col col-5">
+      <div class="col-tag">부칙 — 소각기한·경과조치·과태료 적용 시점</div>
+      <div class="col-heading">기존 자기주식도<br>기한이 있다</div>
+      <div class="col-body">
+        <div class="notice-block">
+          <div class="notice-label">【기존 직접취득 자기주식 소각 데드라인】</div>
+          <div class="deadline-num">2027. 9. 5.</div>
+          <div class="deadline-basis">
+            시행일 2026. 3. 6. + 6개월 경과한 날부터<br>
+            1년 이내 / 부칙 제2조제1항1호
+          </div>
+        </div>
+
+        <div class="notice-block">
+          <div class="notice-label">【회사 형태에 따른 차이 — 직접 제재】</div>
+          <div class="notice-text">
+            5천만원 과태료(상법 제635조제3항)는 상장회사에 적용되는 규정입니다.<br><br>
+            <strong>단, 동 과태료는 2026. 3. 6. 이후 행위부터 적용(부칙 제3조). 시행 전 행위 불소급.</strong><br><br>
+            비상장회사는 이 과태료의 직접 대상은 아닙니다. 다만 정관과 주주총회 절차를 갖추지 않은 채 자기주식을 보유하다가 이후 소각이나 처분에 이르면, 그 행위의 효력과 세무상 평가에서 다툼이 생길 수 있습니다. 과태료가 없다는 것이 절차를 비워도 된다는 뜻은 아닙니다.
+          </div>
+        </div>
+      </div>
+      <div class="col-remark">
+        기존 자기주식도 2027. 9. 5.까지가 기한
+      </div>
+    </div>
+
+  </div><!-- /body -->
+
+  <!-- 풋터 -->
+  <div class="footer">
+    <div class="footer-quote">
+      "법은 '하여야 한다'고 적었습니다. 정관과 주총은 선택이 아니라 순서입니다."
+    </div>
+    <div class="footer-note">
+      본 자료는 상법 §341조의4 원문에 근거하며, 구체적 적용·세무효과·회사형태별 제재는<br>
+      파트너 세무사·변호사 검수를 요합니다. 작성: 밸류마크 경영컨설팅.
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
